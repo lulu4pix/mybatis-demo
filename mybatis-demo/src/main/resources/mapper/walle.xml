@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.shishi.Mapper.WalleMapper">
+
+    <!-- 查询所有 -->
     <select id="findAll" resultType="Walle">
         SELECT * FROM xiaoshishi;
     </select>
+
+    <!-- 按条件查 demo1 -->
+    <select id="findCidRange" resultType="Walle">
+        SELECT * FROM xiaoshishi where cid <![CDATA[ <= ]]> #{cid};
+    </select>
+
+    <!-- 按条件查 demo2 -->
+    <select id="findByCid" resultType="Walle">
+        SELECT * FROM xiaoshishi where cid = #{cid};
+    </select>
+
+    <!-- 删除 -->
+    <select id="deleteOne" resultType="Walle">
+        delete FROM xiaoshishi where cid = #{cid};
+    </select>
+
+    <!-- 插入 -->
+    <insert id="insertOne" >
+        insert into xiaoshishi (name, cid) values(#{name}, #{cid});
+    </insert>
+
+    <!--修改-->
+    <update id="updateOne"  >
+        update xiaoshishi set name = #{name} where cid = #{cid}
+    </update>
 </mapper>

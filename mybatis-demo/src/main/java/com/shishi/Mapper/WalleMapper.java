@@ -8,4 +8,15 @@ import java.util.List;
 @Mapper
 public interface WalleMapper {
     public List<Walle> findAll();
+
+    public List<Walle> findCidRange(int cid);
+
+    public Walle findByCid(int cid);
+
+    public void deleteOne(int cid);
+
+    public void insertOne(Walle walle);
+
+    public void updateOne(Walle walle);
+
 }

@@ -2,6 +2,7 @@ package com.shishi;
 
 import com.shishi.Mapper.WalleMapper;
 import com.shishi.beans.Walle;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,5 +18,32 @@ public class Controller {
     @RequestMapping("/all")
     public List<Walle> findAll() {
         return mapper.findAll();
+    }
+
+
+    // 测试所有
+    @RequestMapping("/findCidRange")
+    public List<Walle> findCidRange( int cid) {
+        return mapper.findCidRange(cid);
+    }
+
+    @RequestMapping("/findByCid")
+    public Walle findByCid( int cid) {
+        return mapper.findByCid(cid);
+    }
+
+    @RequestMapping("/deleteOne")
+    public void deleteOne(int cid) {
+         mapper.deleteOne(cid);
+    }
+
+    @RequestMapping("/insertOne")
+    public void insertOne(Walle walle) {
+        mapper.insertOne(walle);
+    }
+
+    @RequestMapping("/updateOne")
+    public void updateOne(Walle walle) {
+        mapper.updateOne(walle);
     }
 }
