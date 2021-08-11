@@ -7,7 +7,11 @@ spring:
 
   datasource:
     driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://localhost:3306/shishi?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    # 之前mybatis连的数据库
+    #url: jdbc:mysql://localhost:3306/shishi?useUnicode=true&characterEncoding=utf-8&useSSL=false
+
+    # 测camunda连的数据库
+    url: jdbc:mysql://localhost:3306/camunda?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
 
@@ -45,3 +49,21 @@ spring:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.shishi.beans
+
+
+
+
+#camunda 配置
+camunda:
+  bpm:
+    admin-user:
+      id: admin
+      password: admin
+      firstName: admin
+    filter:
+      create: All tasks
+    job-execution:
+      enabled: true
+    metrics:
+      enabled: false
+      db-reporter-activate: false
