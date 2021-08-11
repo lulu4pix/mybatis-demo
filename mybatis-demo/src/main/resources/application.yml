@@ -1,5 +1,5 @@
 server:
-  port: 81
+  port: 8080
 
 spring:
   application:
@@ -57,13 +57,8 @@ mybatis:
 camunda:
   bpm:
     admin-user:
-      id: admin
-      password: admin
-      firstName: admin
+      id: demo
+      password: demo
+      first-name: demo
     filter:
       create: All tasks
-    job-execution:
-      enabled: true
-    metrics:
-      enabled: false
-      db-reporter-activate: false

@@ -102,33 +102,33 @@
             <scope>compile</scope>
         </dependency>
 
-    <!-- camunda依赖 -->
+    <!-- springboot camunda依赖 -->
+        <dependency>
+            <groupId>org.camunda.bpm.springboot</groupId>
+            <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
 
-<!--    <dependency>-->
-<!--        <groupId>org.camunda.bpm.springboot</groupId>-->
-<!--        <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>-->
-<!--        <version>3.4.1</version>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--        <groupId>com.h2database</groupId>-->
-<!--        <artifactId>h2</artifactId>-->
-<!--    </dependency>-->
-
-        <dependency>
-            <groupId>org.camunda.bpm</groupId>
-            <artifactId>camunda-external-task-client</artifactId>
-            <version>7.15.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.6.1</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.1</version>
-        </dependency>
+        <!--这是普通版本的，非sprintboot版本camunda-->
+<!--        <dependency>-->
+<!--            <groupId>org.camunda.bpm</groupId>-->
+<!--            <artifactId>camunda-external-task-client</artifactId>-->
+<!--            <version>7.15.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-simple</artifactId>-->
+<!--            <version>1.6.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>javax.xml.bind</groupId>-->
+<!--            <artifactId>jaxb-api</artifactId>-->
+<!--            <version>2.3.1</version>-->
+<!--        </dependency>-->
 
 
     </dependencies>

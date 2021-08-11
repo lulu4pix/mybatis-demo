@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1s5k17p" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="fang" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="开始">
+      <bpmn:outgoing>Flow_1lsfm9p</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1lsfm9p" sourceRef="StartEvent_1" targetRef="Activity_14qj5pg" />
+    <bpmn:serviceTask id="Activity_14qj5pg" name="放Q技能" camunda:class="com.shishi1.camunda2.QDelegate">
+      <bpmn:incoming>Flow_1lsfm9p</bpmn:incoming>
+      <bpmn:outgoing>Flow_17fkyab</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_17fkyab" sourceRef="Activity_14qj5pg" targetRef="Activity_02lijwv" />
+    <bpmn:serviceTask id="Activity_02lijwv" name="放W技能" camunda:class="com.shishi1.camunda2.WDeletage">
+      <bpmn:incoming>Flow_17fkyab</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mzae6f</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1mzae6f" sourceRef="Activity_02lijwv" targetRef="Activity_0ty0t3a" />
+    <bpmn:serviceTask id="Activity_0ty0t3a" name="放Ｅ技能" camunda:class="com.shishi1.camunda2.EDelegate">
+      <bpmn:incoming>Flow_1mzae6f</bpmn:incoming>
+      <bpmn:outgoing>Flow_0i703fu</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_1sfkjeq" name="回城">
+      <bpmn:incoming>Flow_0i703fu</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0i703fu" sourceRef="Activity_0ty0t3a" targetRef="Event_1sfkjeq" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="fang">
+      <bpmndi:BPMNEdge id="Flow_1lsfm9p_di" bpmnElement="Flow_1lsfm9p">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17fkyab_di" bpmnElement="Flow_17fkyab">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="430" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mzae6f_di" bpmnElement="Flow_1mzae6f">
+        <di:waypoint x="530" y="117" />
+        <di:waypoint x="590" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0i703fu_di" bpmnElement="Flow_0i703fu">
+        <di:waypoint x="690" y="117" />
+        <di:waypoint x="752" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="186" y="142" width="23" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1537zsa_di" bpmnElement="Activity_14qj5pg">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0nyrcop_di" bpmnElement="Activity_02lijwv">
+        <dc:Bounds x="430" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1p1mq29_di" bpmnElement="Activity_0ty0t3a">
+        <dc:Bounds x="590" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1sfkjeq_di" bpmnElement="Event_1sfkjeq">
+        <dc:Bounds x="752" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="759" y="142" width="23" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
